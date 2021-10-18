@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login</title>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+		<link rel="stylesheet" href="style.css">
+		<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+		<style>
+		    
+.copy {
+  	width: 100%;
+  	padding: 15px;
+ 	
+  	background-color: #3274d6;
+  	border: 0;
+  	cursor: pointer;
+  	font-weight: bold;
+  	color: #ffffff;
+  	transition: background-color 0.2s;
+  	
+}
+.copy:hover {
+	background-color: #2868c7;
+  	transition: background-color 0.2s;
+}
+.copy1 {
+  	width: 100%;
+  	padding: 15px;
+ 	
+  	background-color: #3274d6;
+  	border: 0;
+  	cursor: pointer;
+  	font-weight: bold;
+  	color: #ffffff;
+  	transition: background-color 0.2s;
+  	border-radius: 0 0 15px 15px;
+}
+.copy1:hover {
+	background-color: #ff0000;
+  	transition: background-color 0.2s;
+}
+.login{
+    border-radius:15px 15px 20px 20px;
+}
+		</style>
+	</head>
+	<body>
+	    <div class="animate__animated animate__tada">
+		<div class="login">
+			<h1>Login</h1>
+			<form action="authenticate.php" method="post">
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="Username" id="username" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+				<input type="submit" value="Login">
+				<input class="copy" type="button" value="Sign up" onclick="window.location.href='register.html'">
+				<input class="copy1" type="button" value="Forgot password?" onclick="window.location.href='forgot-password.html'">
+			</form>
+		</div>
+		</div>
+	</body>
+</html>

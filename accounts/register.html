@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+		<link href="style3.css" rel="stylesheet" type="text/css">
+		<script>
+	function checkNames() {
+    // Find the validation image div
+    var validationElement1 = document.getElementById('checking1');
+   var validationElement2 = document.getElementById('checking2');
+    // Get the form values
+    var name1 = document.forms["register"]["password1"].value;
+    var name2 = document.forms["register"]["password2"].value;
+    // Reset the validation element styles
+    
+    
+    validationElement1.className = 'validation-color1';
+  validationElement2.className = 'validation-color2';
+    // Check if name2 isn't null or undefined or empty
+    if (name2) {
+        // Show the validation element
+       
+        // Choose which class to add to the element
+        validationElement1.className += 
+            (name1 == name2 ? ' validation-success' : ' validation-error');
+            validationElement2.className += 
+            (name1 == name2 ? ' validation-success' : ' validation-error');
+    }
+    if(name1!==name2){
+        document.getElementById("myBtn").disabled = true;
+        
+        
+    }
+    else{
+        document.getElementById("myBtn").disabled = false; 
+    }
+}
+		</script>
+		<style>
+		    .validation-error {
+    background-color: #ff0000 !important;
+    
+}
+
+/* Success styling */
+.validation-success {
+    background-color: #00ff00 !important;
+    
+}
+
+
+		</style>
+	</head>
+	<body>
+		<div class="register">
+			<h1>Register</h1>
+			<form name ="register" action="register.php" method="post" autocomplete="off">
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="Username" id="username" required>
+				<label for="password" id="checking1" class="validation-color1">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password1" placeholder="Password" id="password" onblur="checkNames()" required>
+				<label for="password" id="checking2" class="validation-color2" >
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password2" placeholder="Password again" id="password2" onblur="checkNames()" required>
+				<label for="email">
+					<i class="fas fa-envelope"></i>
+				</label>
+				<input type="email" name="email" placeholder="Email" id="email" required>
+				<input type="submit" id="myBtn" value="Register">
+				
+			</form>
+		</div>
+	</body>
+</html>
