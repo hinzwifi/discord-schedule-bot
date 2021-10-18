@@ -188,5 +188,10 @@ if (!isset($_SESSION['loggedin'])) {
     style="height:92.9vh;" frameBorder="0"></iframe>
   </section>
  <script src="js/style.js"></script>
+ <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js');
+        }
+    </script>
 </body>
 </html>
